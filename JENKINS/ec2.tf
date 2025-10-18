@@ -1,7 +1,7 @@
 # configured aws provider with proper credentials
 provider "aws" {
   region    = "us-east-1"
-  profile   = "default"
+  profile   = "zaraoye"
 }
 
 
@@ -121,4 +121,5 @@ resource "aws_instance" "ec2_instance" {
 output "website_url" {
   value     = join("", ["http://", aws_instance.ec2_instance.public_ip, ":", "8080"])
 }
+
 
