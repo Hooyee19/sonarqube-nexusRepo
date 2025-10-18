@@ -30,7 +30,7 @@ resource "aws_default_subnet" "default_az1" {
 
 # create security group for the ec2 instance
 resource "aws_security_group" "ec2_security_group" {
-  name        = "ec2 security group"
+  name        = "ec2 security group-jenkins"
   description = "allow access on ports 8080 and 22"
   vpc_id      = aws_default_vpc.default_vpc.id
 
@@ -121,5 +121,6 @@ resource "aws_instance" "ec2_instance" {
 output "website_url" {
   value     = join("", ["http://", aws_instance.ec2_instance.public_ip, ":", "8080"])
 }
+
 
 
